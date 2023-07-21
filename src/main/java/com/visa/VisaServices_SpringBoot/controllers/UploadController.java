@@ -19,6 +19,12 @@ public class UploadController {
         return uploadService.getAllUploadedFile();
     }
 
+
+    @GetMapping("visa/{holderPassportNumber}/{holderDateOfBirth}/{holderNationality}")
+    public List<UploadModel> searchVis(@PathVariable String holderPassportNumber, @PathVariable String holderDateOfBirth, @PathVariable String holderNationality){
+        return uploadService.searchUploadedVisa_(holderPassportNumber, holderDateOfBirth, holderNationality);
+    }
+
     @PostMapping("uploadVisa")
     public void addToUploadedFile(@RequestBody UploadModel uploadModel){
         uploadService.saveUploadedFile(uploadModel);
