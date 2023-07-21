@@ -7,4 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UploadRepo extends JpaRepository<UploadModel, Long> {
 
+  @Query(nativeQuery = true, value = "SELECT * FROM upload_model WHERE holder_passport_no = ? AND holder_date_of_birth = ? AND holder_nationality = ?")
+    public List<UploadModel> searchUploadedVisa(String holderPassportNo, String holderDateOfBirth, String holderNationality);
+
 }
