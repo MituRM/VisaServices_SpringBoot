@@ -21,7 +21,7 @@ public class UploadController {
 
 
     @GetMapping("visa/{holderPassportNumber}/{holderDateOfBirth}/{holderNationality}")
-    public List<UploadModel> searchVis(@PathVariable String holderPassportNumber, @PathVariable String holderDateOfBirth, @PathVariable String holderNationality){
+    public List<UploadModel> serchUploaded(@PathVariable String holderPassportNumber, @PathVariable String holderDateOfBirth, @PathVariable String holderNationality){
         return uploadService.searchUploadedVisa_(holderPassportNumber, holderDateOfBirth, holderNationality);
     }
 
