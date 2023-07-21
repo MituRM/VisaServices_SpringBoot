@@ -32,4 +32,9 @@ public class UploadService {
       return uploadRepo.findById(id).orElse(new UploadModel());
     }
 
+    //  upload visa
+   public List<UploadModel> searchUploadedVisa_(String holderPassportNo, String holderDateOfBirth, String holderNationality){
+       return uploadRepo.searchUploadedVisa(holderPassportNo, holderDateOfBirth, holderNationality);
+   }
+
 }
