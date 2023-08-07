@@ -27,6 +27,8 @@ public class UploadModel {
     private String holderNationality;
     private UUID fileId;
 
+     private boolean active;
+
 
     @CreationTimestamp
     private LocalDateTime createdDateTime;
