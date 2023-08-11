@@ -30,6 +30,11 @@ public class UploadController {
         uploadService.saveUploadedFile(uploadModel);
     }
 
+    @PutMapping("uploadVisa")
+    public void updateToUploadedFile(@RequestBody UploadModel uploadModel){
+        uploadService.saveUploadedFile(uploadModel);
+    }
+
     @DeleteMapping("uploadVisa/{id}")
     public void deleteUploadedFile_(@PathVariable Long id){
         uploadService.deleteUploadedFile(id);
